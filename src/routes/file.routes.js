@@ -1,6 +1,7 @@
 import { Router } from "express";
 import multer from "multer";
 import { fileController } from "../controllers/file.controller.js";
+import { authMiddleware } from "../middleware/auth.middleware.js";
 
 const router = Router();
 
@@ -12,6 +13,11 @@ router.get("/download/:id", fileController.download);
 
 router.get("/files", fileController.getFiles);
 
-router.post("/upload", upload.single("file"), fileController.upload);
+router.post(
+  "/upload",
+  authMiddleware,
+  upload.single("file"),
+  fileController.upload,
+);
 
 export default router;

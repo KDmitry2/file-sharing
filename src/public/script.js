@@ -3,6 +3,7 @@ const status = document.getElementById("status");
 const result = document.getElementById("result");
 const loadFilesButton = document.getElementById("load-files");
 const filesContainer = document.getElementById("files");
+const logoutButton = document.getElementById("logout-button");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -52,4 +53,12 @@ loadFilesButton.addEventListener("click", async (event) => {
     `,
     )
     .join("");
+});
+
+logoutButton?.addEventListener("click", async () => {
+  await fetch("/logout", {
+    method: "POST",
+  });
+
+  window.location.href = "/login.html";
 });

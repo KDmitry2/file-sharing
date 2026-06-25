@@ -13,6 +13,19 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page__logout {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 .page__container {
   max-width: 700px;
   margin: 0 auto;
@@ -92,5 +105,47 @@ body {
 
 .file-card__meta {
   color: #666;
+  font-size: 14px;
+}
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+
+.login__form {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 8%);
+}
+
+.login__title {
+  margin: 0 0 8px;
+}
+
+.login__input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.login__button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.login__error {
+  margin: 0;
+  color: red;
   font-size: 14px;
 }
