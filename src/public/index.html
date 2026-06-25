@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>File Sharing Service</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="page__container">
+        <h1 class="page__title">File Sharing Service</h1>
+        <section class="upload-card">
+          <form id="upload-form" class="upload-card__form">
+            <input
+              class="upload-card__input"
+              type="file"
+              name="file"
+              required
+            />
+            <button class="upload-card__button" type="submit">Загрузить</button>
+          </form>
+          <p id="status" class="upload-card__status"></p>
+          <div id="result" class="upload-card__result"></div>
+          <button
+            id="load-files"
+            class="upload-card__button upload-card__button_secondary"
+          >
+            Статистика
+          </button>
+          <div id="files" class="upload-card__files"></div>
+        </section>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.page__container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.page__title {
+  margin: 0 0 24px;
+}
+
+.upload-card {
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 8%);
+}
+
+.upload-card__form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.upload-card__input {
+  flex: 1;
+}
+
+.upload-card__button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.upload-card__button:hover {
+  opacity: 0.9;
+}
+
+.upload-card__button_secondary {
+  margin-top: 24px;
+}
+
+.upload-card__status {
+  min-height: 20px;
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+.upload-card__result {
+  margin-top: 16px;
+}
+
+.upload-card__result a {
+  text-decoration: none;
+}
+
+.upload-card__result a:hover {
+  text-decoration: underline;
+}
+
+.upload-card__files {
+  margin-top: 24px;
+}
+
+.file-card {
+  padding: 16px;
+  margin-bottom: 12px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+}
+
+.file-card__name {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.file-card__meta {
+  color: #666;
+  font-size: 14px;
+}
