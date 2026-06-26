@@ -1,9 +1,12 @@
+const isAuthorized = document.cookie.includes("auth=true");
 const form = document.getElementById("upload-form");
 const status = document.getElementById("status");
 const result = document.getElementById("result");
 const loadFilesButton = document.getElementById("load-files");
 const filesContainer = document.getElementById("files");
 const logoutButton = document.getElementById("logout-button");
+const downloadLink = document.getElementById("download-link");
+const copyButton = document.getElementById("copy-button");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -16,15 +19,22 @@ form.addEventListener("submit", async (event) => {
     body: formData,
   });
 
+  if (response.status === 401) {
+    window.location.href = "/login.html";
+    return;
+  }
+
+  if (!response.ok) {
+    status.textContent = data?.error;
+    return;
+  }
+
   const data = await response.json();
 
-  status.textContent = data.message;
-
-  result.innerHTML = `
-    <a href="${data.downloadUrl}">
-      Download file
-    </a>
-  `;
+  status.textContent = "";
+  downloadLink.href = data.downloadUrl;
+  downloadLink.textContent = data.downloadUrl;
+  result.classList.remove("upload-card__result--hidden");
 });
 
 loadFilesButton.addEventListener("click", async (event) => {
@@ -61,4 +71,15 @@ logoutButton?.addEventListener("click", async () => {
   });
 
   window.location.href = "/login.html";
+});
+
+if (isAuthorized) {
+  logoutButton.textContent = "Logout";
+} else {
+  logoutButton.textContent = "Login";
+}
+
+copyButton.addEventListener("click", async () => {
+  await navigator.clipboard.writeText(downloadLink.href);
+  alert("Ссылка скопирована!");
 });

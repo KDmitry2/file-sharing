@@ -10,9 +10,10 @@ class FileController {
     }
 
     const metadata = await fileService.createFileMetadata(req.file);
+    const downloadUrl = `${req.protocol}://${req.get("host")}/download/${metadata.id}`;
 
     res.json({
-      downloadUrl: `/download/${metadata.id}`,
+      downloadUrl,
     });
   }
 

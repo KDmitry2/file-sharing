@@ -23,7 +23,15 @@
             <button class="upload-card__button" type="submit">Загрузить</button>
           </form>
           <p id="status" class="upload-card__status"></p>
-          <div id="result" class="upload-card__result"></div>
+          <div
+            id="result"
+            class="upload-card__result upload-card__result--hidden"
+          >
+            <a id="download-link" class="upload-card__link" target="_blank"></a>
+            <button id="copy-button" class="upload-card__copy-button">
+              Copy
+            </button>
+          </div>
           <button
             id="load-files"
             class="upload-card__button upload-card__button_secondary"

@@ -78,12 +78,30 @@ body {
   margin-top: 16px;
 }
 
-.upload-card__result a {
-  text-decoration: none;
+.upload-card__result--hidden {
+  display: none;
 }
 
-.upload-card__result a:hover {
+.upload-card__link {
+  color: #2563eb;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.upload-card__link:hover {
   text-decoration: underline;
+}
+
+.upload-card__copy-button {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.upload-card__copy-button:hover {
+  background: #f3f4f6;
 }
 
 .upload-card__files {
